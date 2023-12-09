@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_project_1st/categorise/DetailsItem.dart';
+import 'package:flutter_project_1st/categorise/GreenCircles.dart';
+import 'package:flutter_project_1st/categorise/appbar_details.dart';
+import 'package:flutter_project_1st/categorise/bottomNavigationbar.dart';
+
+class slideDetails extends StatefulWidget {
+  const slideDetails({Key? key, required this.itemId}) : super(key: key);
+  final int itemId;
+  @override
+  State<slideDetails> createState() => _slideDetailsState();
+}
+
+class _slideDetailsState extends State<slideDetails> {
+  List<Map> slides = [
+    {
+      "id": 1,
+      "image": "assets/resturants/rest1.jpeg",
+      "name": "item1 ",
+      "description": "description1",
+    },
+    {
+      "id": 2,
+      "image": "assets/resturants/rest2.jpeg",
+      "name": "item2",
+      "description": "description2",
+    },
+    {
+      "id": 3,
+      "image": "assets/resturants/rest3.jpeg",
+      "name": "item3",
+      "description": "description3",
+    },
+    {
+      "id": 4,
+      "image": "assets/resturants/rest4.jpeg",
+      "name": "item4",
+      "description": "description4",
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final item = slides.firstWhere((slide) => slide["id"] == widget.itemId);
+    return Scaffold(
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: appBarDetails(),
+      ),
+      // backgroundColor: Color(0xFFffffff),
+      body: LayoutBuilder(
+        builder: ((context, constraints) {
+          return Container(
+            child: Column(
+              children: [
+                GreenCricles(item: item),
+                DetailsItem(constraints: constraints, item: item)
+              ],
+            ),
+          );
+        }),
+      ),
+
+      bottomNavigationBar: BottomNav(),
+    );
+  }
+}
