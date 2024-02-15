@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "855019210079",
+    "project_id": "unitradechatting",
+    "storage_bucket": "unitradechatting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855019210079:android:f5fa18159a5914beac22ea",
+        "android_client_info": {
+          "package_name": "com.example.flutter_project_1st"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3jtsf2PD1lIUEiHxQbtHVQcvjDpoveNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
